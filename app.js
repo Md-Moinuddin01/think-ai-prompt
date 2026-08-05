@@ -335,3 +335,17 @@ function deleteActivePrompt() {
   render();
   showToast("Prompt deleted");
 }
+
+function openDrawer(id) {
+  const prompt = findPrompt(id);
+  if (!prompt) return;
+
+  activePromptId = id;
+  elements.detailCategory.textContent = prompt.category;
+  elements.detailTitle.textContent = prompt.title;
+  elements.detailDescription.textContent = prompt.description;
+  elements.detailBody.textContent = prompt.body;
+  elements.detailFavorite.textContent = prompt.favorite ? "Remove favorite" : "Favorite";
+  elements.detailTags.innerHTML = prompt.tags.map((tag) => `<span class="tag">${escapeHtml(tag)}</span>`).join("");
+  elements.detailDrawer.hidden = false;
+}
