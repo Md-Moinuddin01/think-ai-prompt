@@ -323,3 +323,15 @@ function savePromptFromForm(event) {
   closeModal();
   render();
 }
+
+function deleteActivePrompt() {
+  const id = elements.promptId.value;
+  if (!id) return;
+
+  prompts = prompts.filter((prompt) => prompt.id !== id);
+  savePrompts();
+  closeModal();
+  closeDrawer();
+  render();
+  showToast("Prompt deleted");
+}
