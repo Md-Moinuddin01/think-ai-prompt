@@ -211,3 +211,23 @@ function createPromptCard(prompt, index) {
   const tags = prompt.tags.slice(0, 3).map((tag) => `<span class="tag">${escapeHtml(tag)}</span>`).join("");
 
 
+  return `
+    <article class="prompt-card ${favoriteClass}" style="animation-delay: ${index * 45}ms">
+      <div class="card-top">
+        <span class="category-pill" style="--category-color: ${getCategoryColor(prompt.category)}">${escapeHtml(prompt.category)}</span>
+        <button class="favorite-button ${favoriteButtonClass}" type="button" aria-label="Toggle favorite" data-action="favorite" data-id="${prompt.id}">
+          ${prompt.favorite ? "Star" : "Save"}
+        </button>
+      </div>
+      <div>
+        <h3>${escapeHtml(prompt.title)}</h3>
+        <p>${escapeHtml(prompt.description)}</p>
+      </div>
+      <div class="tag-row">${tags}</div>
+      <div class="card-actions">
+        <button class="secondary-button" type="button" data-action="details" data-id="${prompt.id}">Details</button>
+        <button class="primary-button" type="button" data-action="copy" data-id="${prompt.id}">Copy</button>
+      </div>
+    </article>
+  `;
+}
