@@ -155,3 +155,21 @@ button {
   min-height: 50px;
   padding: 0 20px;
 }
+
+.secondary-button,
+.ghost-button {
+  color: var(--text);
+  background: var(--surface);
+  border: 1px solid var(--line);
+}
+
+.icon-button {
+  position: relative;
+  display: grid;
+  width: 42px;
+  height: 42px;
+  place-items: center;
+  color: var(--text);
+  background: var(--surface);
+  border: 1px solid var(--line);
+}
