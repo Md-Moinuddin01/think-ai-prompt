@@ -231,3 +231,12 @@ function createPromptCard(prompt, index) {
     </article>
   `;
 }
+
+function handleCardAction(event) {
+  const id = event.currentTarget.dataset.id;
+  const action = event.currentTarget.dataset.action;
+
+  if (action === "favorite") toggleFavorite(id);
+  if (action === "copy") copyPrompt(id);
+  if (action === "details") openDrawer(id);
+}
