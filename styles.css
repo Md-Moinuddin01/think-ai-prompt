@@ -531,3 +531,37 @@ h3 {
 .empty-illustration span:nth-child(3) {
   width: 48%;
 }
+
+
+.site-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 26px 0 14px;
+  color: var(--muted);
+  border-top: 1px solid var(--line);
+}
+
+.site-footer p {
+  margin-bottom: 0;
+}
+
+.modal-backdrop,
+.detail-drawer {
+  position: fixed;
+  inset: 0;
+  z-index: 50;
+  display: grid;
+  padding: 18px;
+  background: rgba(12, 12, 12, 0.42);
+  backdrop-filter: blur(12px);
+}
+
+.modal-backdrop {
+  place-items: center;
+}
+
+.detail-drawer {
+  justify-items: end;
+}
