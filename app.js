@@ -93,3 +93,12 @@ const elements = {
   themeToggle: document.querySelector("#themeToggle")
 };
 
+document.addEventListener("DOMContentLoaded", init);
+
+function init() {
+  applyTheme();
+  bindEvents();
+  render();
+}
+
+
