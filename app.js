@@ -58,3 +58,38 @@ let prompts = loadPrompts();
 let activeCategory = "All";
 let activePromptId = null;
 
+
+const elements = {
+  searchInput: document.querySelector("#searchInput"),
+  categoryFilters: document.querySelector("#categoryFilters"),
+  promptGrid: document.querySelector("#promptGrid"),
+  favoritesGrid: document.querySelector("#favoritesGrid"),
+  favoritesSection: document.querySelector("#favoritesSection"),
+  emptyState: document.querySelector("#emptyState"),
+  totalPrompts: document.querySelector("#totalPrompts"),
+  favoriteCount: document.querySelector("#favoriteCount"),
+  categoryCount: document.querySelector("#categoryCount"),
+  promptModal: document.querySelector("#promptModal"),
+  promptForm: document.querySelector("#promptForm"),
+  promptId: document.querySelector("#promptId"),
+  titleInput: document.querySelector("#titleInput"),
+  categoryInput: document.querySelector("#categoryInput"),
+  tagsInput: document.querySelector("#tagsInput"),
+  descriptionInput: document.querySelector("#descriptionInput"),
+  bodyInput: document.querySelector("#bodyInput"),
+  modalMode: document.querySelector("#modalMode"),
+  modalTitle: document.querySelector("#modalTitle"),
+  deletePrompt: document.querySelector("#deletePrompt"),
+  detailDrawer: document.querySelector("#detailDrawer"),
+  detailCategory: document.querySelector("#detailCategory"),
+  detailTitle: document.querySelector("#detailTitle"),
+  detailDescription: document.querySelector("#detailDescription"),
+  detailTags: document.querySelector("#detailTags"),
+  detailBody: document.querySelector("#detailBody"),
+  detailFavorite: document.querySelector("#detailFavorite"),
+  detailEdit: document.querySelector("#detailEdit"),
+  detailCopy: document.querySelector("#detailCopy"),
+  toastStack: document.querySelector("#toastStack"),
+  themeToggle: document.querySelector("#themeToggle")
+};
+
