@@ -715,3 +715,26 @@ pre {
   background: var(--muted);
   transform: rotate(45deg);
 }
+
+.icon-sun {
+  border: 2px solid currentColor;
+  border-radius: 50%;
+}
+
+.icon-sun::before {
+  content: "";
+  position: absolute;
+  inset: -6px;
+  border-top: 2px solid currentColor;
+  border-bottom: 2px solid currentColor;
+  border-radius: 50%;
+}
+
+[data-theme="dark"] .icon-sun {
+  border-color: transparent;
+  box-shadow: inset -6px -2px 0 currentColor;
+}
+
+[hidden] {
+  display: none !important;
+}
