@@ -310,3 +310,16 @@ function savePromptFromForm(event) {
     createdAt: findPrompt(elements.promptId.value)?.createdAt || Date.now()
   };
 
+
+  if (elements.promptId.value) {
+    prompts = prompts.map((prompt) => prompt.id === formPrompt.id ? formPrompt : prompt);
+    showToast("Prompt updated");
+  } else {
+    prompts.unshift(formPrompt);
+    showToast("Prompt saved");
+  }
+
+  savePrompts();
+  closeModal();
+  render();
+}
