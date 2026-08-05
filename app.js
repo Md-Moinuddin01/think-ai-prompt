@@ -101,4 +101,36 @@ function init() {
   render();
 }
 
+function bindEvents() {
+  document.querySelector("#openCreateModal").addEventListener("click", openCreateModal);
+  document.querySelector("#heroCreateButton").addEventListener("click", openCreateModal);
+  document.querySelector("#emptyCreateButton").addEventListener("click", openCreateModal);
+  document.querySelector("#closeModal").addEventListener("click", closeModal);
+  document.querySelector("#closeDrawer").addEventListener("click", closeDrawer);
+  document.querySelector("#clearFilters").addEventListener("click", clearFilters);
+
+  elements.searchInput.addEventListener("input", render);
+  elements.promptForm.addEventListener("submit", savePromptFromForm);
+  elements.deletePrompt.addEventListener("click", deleteActivePrompt);
+  elements.themeToggle.addEventListener("click", toggleTheme);
+  elements.detailFavorite.addEventListener("click", toggleActiveFavorite);
+  elements.detailEdit.addEventListener("click", () => openEditModal(activePromptId));
+  elements.detailCopy.addEventListener("click", () => copyPrompt(activePromptId));
+
+  elements.promptModal.addEventListener("click", (event) => {
+    if (event.target === elements.promptModal) closeModal();
+  });
+
+  elements.detailDrawer.addEventListener("click", (event) => {
+    if (event.target === elements.detailDrawer) closeDrawer();
+  });
+
+  document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape") {
+      closeModal();
+      closeDrawer();
+    }
+  });
+}
+
 
