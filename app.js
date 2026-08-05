@@ -290,3 +290,7 @@ function openEditModal(id) {
   elements.titleInput.focus();
 }
 
+
+function closeModal() {
+  elements.promptModal.hidden = true;
+}
