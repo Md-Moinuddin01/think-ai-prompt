@@ -565,3 +565,107 @@ h3 {
 .detail-drawer {
   justify-items: end;
 }
+
+
+.prompt-modal,
+.drawer-card {
+  width: min(100%, 620px);
+  max-height: calc(100vh - 36px);
+  overflow: auto;
+  padding: 22px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  color: var(--text);
+  background: var(--surface);
+  box-shadow: var(--shadow);
+  animation: modalEnter 220ms ease both;
+}
+
+.drawer-card {
+  width: min(100%, 560px);
+}
+
+.modal-header {
+  display: flex;
+  align-items: start;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 18px;
+}
+
+.prompt-form {
+  display: grid;
+  gap: 14px;
+}
+
+.prompt-form label {
+  display: grid;
+  gap: 8px;
+  color: var(--muted);
+  font-size: 13px;
+  font-weight: 800;
+}
+
+.prompt-form input,
+.prompt-form textarea {
+  width: 100%;
+  padding: 13px 14px;
+  color: var(--text);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  outline: none;
+  background: var(--surface-soft);
+  resize: vertical;
+}
+
+#deletePrompt {
+  margin-right: auto;
+  color: #b64040;
+}
+
+.drawer-description {
+  color: var(--muted);
+  line-height: 1.7;
+}
+
+pre {
+  overflow: auto;
+  white-space: pre-wrap;
+  margin: 18px 0;
+  padding: 16px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  color: var(--text);
+  background: var(--surface-soft);
+  line-height: 1.6;
+}
+
+.toast-stack {
+  position: fixed;
+  right: 18px;
+  bottom: 18px;
+  z-index: 80;
+  display: grid;
+  gap: 10px;
+}
+
+.toast {
+  max-width: 340px;
+  padding: 13px 15px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  color: var(--text);
+  background: var(--surface);
+  box-shadow: var(--shadow-soft);
+  animation: toastEnter 220ms ease both;
+}
+
+.plus-icon,
+.search-icon,
+.icon-sun,
+.close-icon {
+  position: relative;
+  display: inline-block;
+  width: 18px;
+  height: 18px;
+}
