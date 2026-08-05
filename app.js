@@ -349,3 +349,7 @@ function openDrawer(id) {
   elements.detailTags.innerHTML = prompt.tags.map((tag) => `<span class="tag">${escapeHtml(tag)}</span>`).join("");
   elements.detailDrawer.hidden = false;
 }
+
+function closeDrawer() {
+  elements.detailDrawer.hidden = true;
+}
