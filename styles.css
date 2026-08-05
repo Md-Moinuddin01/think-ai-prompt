@@ -795,3 +795,55 @@ pre {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
+
+@media (max-width: 680px) {
+  .app-shell {
+    padding: 14px;
+  }
+
+  .site-header,
+  .section-heading,
+  .site-footer {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .header-actions {
+    display: grid;
+    grid-template-columns: 42px 1fr;
+  }
+
+  .hero-section {
+    padding-top: 34px;
+  }
+
+  .hero-visual {
+    min-height: 350px;
+  }
+
+  .stats-row,
+  .prompt-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .modal-backdrop,
+  .detail-drawer {
+    padding: 10px;
+  }
+
+  .prompt-modal,
+  .drawer-card {
+    max-height: calc(100vh - 20px);
+    padding: 18px;
+  }
+
+  .drawer-actions,
+  .form-actions {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+
+  #deletePrompt {
+    margin-right: 0;
+  }
+}
