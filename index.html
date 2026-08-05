@@ -171,3 +171,31 @@
       </form>
     </aside>
   </div>
+
+       <div class="detail-drawer" id="detailDrawer" hidden>
+    <div class="drawer-card">
+      <div class="modal-header">
+        <div>
+          <p class="eyebrow" id="detailCategory">Category</p>
+          <h2 id="detailTitle">Prompt title</h2>
+        </div>
+        <button class="icon-button" id="closeDrawer" type="button" aria-label="Close prompt details">
+          <span class="close-icon" aria-hidden="true"></span>
+        </button>
+      </div>
+      <p id="detailDescription" class="drawer-description"></p>
+      <div id="detailTags" class="tag-row"></div>
+      <pre id="detailBody"></pre>
+      <div class="drawer-actions">
+        <button class="secondary-button" id="detailFavorite" type="button">Favorite</button>
+        <button class="secondary-button" id="detailEdit" type="button">Edit</button>
+        <button class="primary-button" id="detailCopy" type="button">Copy prompt</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="toast-stack" id="toastStack" aria-live="polite" aria-atomic="true"></div>
+
+  <script src="app.js"></script>
+</body>
+</html>
