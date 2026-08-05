@@ -359,3 +359,13 @@ function toggleActiveFavorite() {
   toggleFavorite(activePromptId);
   openDrawer(activePromptId);
 }
+
+function toggleFavorite(id) {
+  prompts = prompts.map((prompt) => {
+    if (prompt.id !== id) return prompt;
+    return { ...prompt, favorite: !prompt.favorite };
+  });
+  savePrompts();
+  render();
+  showToast(findPrompt(id).favorite ? "Added to favorites" : "Removed from favorites");
+}
