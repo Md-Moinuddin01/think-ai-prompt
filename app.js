@@ -353,3 +353,9 @@ function openDrawer(id) {
 function closeDrawer() {
   elements.detailDrawer.hidden = true;
 }
+
+function toggleActiveFavorite() {
+  if (!activePromptId) return;
+  toggleFavorite(activePromptId);
+  openDrawer(activePromptId);
+}
