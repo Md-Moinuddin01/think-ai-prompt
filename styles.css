@@ -682,3 +682,15 @@ pre {
   border-radius: 2px;
   background: currentColor;
 }
+
+.plus-icon::after {
+  transform: rotate(90deg);
+}
+
+.close-icon::before {
+  transform: rotate(45deg);
+}
+
+.close-icon::after {
+  transform: rotate(-45deg);
+}
