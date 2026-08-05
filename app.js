@@ -32,4 +32,24 @@ const starterPrompts = [
     favorite: true,
     createdAt: Date.now() - 700000
   },
-
+  {
+    id: crypto.randomUUID(),
+    title: "Code Review Lens",
+    category: "Developer",
+    description: "Review a code change for bugs, readability, edge cases, and simpler implementation paths.",
+    tags: ["code", "review", "quality"],
+    body: "Act as a pragmatic senior engineer. Review this code for correctness, edge cases, security, maintainability, and test coverage. Prioritize findings by severity and suggest the smallest useful fix for each issue.",
+    favorite: false,
+    createdAt: Date.now() - 500000
+  },
+  {
+    id: crypto.randomUUID(),
+    title: "Customer Research Synthesizer",
+    category: "Research",
+    description: "Summarize interview notes into patterns, pain points, language, and product opportunities.",
+    tags: ["research", "customers", "insights"],
+    body: "Act as a product researcher. Analyze these customer notes and extract recurring pain points, exact customer language, jobs-to-be-done, objections, buying triggers, and product opportunities. End with the top 5 insights.",
+    favorite: false,
+    createdAt: Date.now() - 300000
+  }
+];
