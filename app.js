@@ -205,4 +205,9 @@ function renderPromptGrid(container, promptList) {
   });
 }
 
+function createPromptCard(prompt, index) {
+  const favoriteClass = prompt.favorite ? "favorite" : "";
+  const favoriteButtonClass = prompt.favorite ? "active" : "";
+  const tags = prompt.tags.slice(0, 3).map((tag) => `<span class="tag">${escapeHtml(tag)}</span>`).join("");
+
 
