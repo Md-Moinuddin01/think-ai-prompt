@@ -53,3 +53,8 @@ const starterPrompts = [
     createdAt: Date.now() - 300000
   }
 ];
+
+let prompts = loadPrompts();
+let activeCategory = "All";
+let activePromptId = null;
+
