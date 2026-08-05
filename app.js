@@ -294,3 +294,19 @@ function openEditModal(id) {
 function closeModal() {
   elements.promptModal.hidden = true;
 }
+
+
+function savePromptFromForm(event) {
+  event.preventDefault();
+
+  const formPrompt = {
+    id: elements.promptId.value || crypto.randomUUID(),
+    title: elements.titleInput.value.trim(),
+    category: elements.categoryInput.value.trim(),
+    description: elements.descriptionInput.value.trim(),
+    tags: parseTags(elements.tagsInput.value),
+    body: elements.bodyInput.value.trim(),
+    favorite: findPrompt(elements.promptId.value)?.favorite || false,
+    createdAt: findPrompt(elements.promptId.value)?.createdAt || Date.now()
+  };
+
