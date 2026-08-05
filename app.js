@@ -271,3 +271,22 @@ function openCreateModal() {
   elements.titleInput.focus();
 }
 
+function openEditModal(id) {
+  const prompt = findPrompt(id);
+  if (!prompt) return;
+
+  activePromptId = id;
+  elements.promptId.value = prompt.id;
+  elements.titleInput.value = prompt.title;
+  elements.categoryInput.value = prompt.category;
+  elements.tagsInput.value = prompt.tags.join(", ");
+  elements.descriptionInput.value = prompt.description;
+  elements.bodyInput.value = prompt.body;
+  elements.modalMode.textContent = "Edit prompt";
+  elements.modalTitle.textContent = "Refine your prompt";
+  elements.deletePrompt.hidden = false;
+  elements.promptModal.hidden = false;
+  closeDrawer();
+  elements.titleInput.focus();
+}
+
