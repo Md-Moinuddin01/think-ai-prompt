@@ -173,3 +173,12 @@ button {
   background: var(--surface);
   border: 1px solid var(--line);
 }
+
+.primary-button:hover,
+.secondary-button:hover,
+.ghost-button:hover,
+.icon-button:hover,
+.prompt-card:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-soft);
+}
