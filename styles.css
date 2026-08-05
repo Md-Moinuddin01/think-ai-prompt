@@ -192,3 +192,11 @@ button {
   padding: 48px 0 28px;
 }
 
+.eyebrow {
+  margin: 0 0 10px;
+  color: var(--accent);
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 0;
+  text-transform: uppercase;
+}
