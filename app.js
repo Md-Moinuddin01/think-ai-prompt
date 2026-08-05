@@ -197,4 +197,12 @@ function renderCategoryFilters() {
   });
 }
 
+function renderPromptGrid(container, promptList) {
+  container.innerHTML = promptList.map(createPromptCard).join("");
+
+  container.querySelectorAll("[data-action]").forEach((button) => {
+    button.addEventListener("click", handleCardAction);
+  });
+}
+
 
