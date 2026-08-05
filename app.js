@@ -259,3 +259,15 @@ function getFilteredPrompts() {
     })
     .sort((first, second) => Number(second.favorite) - Number(first.favorite) || second.createdAt - first.createdAt);
 }
+
+function openCreateModal() {
+  activePromptId = null;
+  elements.promptForm.reset();
+  elements.promptId.value = "";
+  elements.modalMode.textContent = "New prompt";
+  elements.modalTitle.textContent = "Save a useful prompt";
+  elements.deletePrompt.hidden = true;
+  elements.promptModal.hidden = false;
+  elements.titleInput.focus();
+}
+
