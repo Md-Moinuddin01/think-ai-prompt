@@ -182,3 +182,13 @@ button {
   transform: translateY(-2px);
   box-shadow: var(--shadow-soft);
 }
+
+.hero-section {
+  display: grid;
+  grid-template-columns: minmax(0, 1.02fr) minmax(320px, 0.98fr);
+  gap: 28px;
+  align-items: center;
+  min-height: 560px;
+  padding: 48px 0 28px;
+}
+
