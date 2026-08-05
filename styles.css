@@ -15,7 +15,8 @@
   --radius: 8px;
   --max-width: 1180px;
 }
-data-theme="dark" {
+
+[data-theme="dark"] {
   --bg: #10100f;
   --surface: #181817;
   --surface-soft: #20201e;
