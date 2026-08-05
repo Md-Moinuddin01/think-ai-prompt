@@ -240,3 +240,22 @@ function handleCardAction(event) {
   if (action === "copy") copyPrompt(id);
   if (action === "details") openDrawer(id);
 }
+
+function getFilteredPrompts() {
+  const query = elements.searchInput.value.trim().toLowerCase();
+
+  return prompts
+    .filter((prompt) => activeCategory === "All" || prompt.category === activeCategory)
+    .filter((prompt) => {
+      const searchableText = [
+        prompt.title,
+        prompt.description,
+        prompt.category,
+        prompt.tags.join(" "),
+        prompt.body
+      ].join(" ").toLowerCase();
+
+      return searchableText.includes(query);
+    })
+    .sort((first, second) => Number(second.favorite) - Number(first.favorite) || second.createdAt - first.createdAt);
+}
