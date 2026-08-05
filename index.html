@@ -47,3 +47,85 @@
             <a class="ghost-button" href="#library">Browse library</a>
           </div>
         </div>
+
+        
+        <div class="hero-visual" aria-label="Prompt workspace preview">
+          <div class="visual-toolbar">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="visual-content">
+            <div class="visual-card active">
+              <small>Favorite</small>
+              <strong>Launch Strategy Builder</strong>
+              <p>Turn notes into a founder-ready GTM plan.</p>
+            </div>
+            <div class="visual-card">
+              <small>Developer</small>
+              <strong>Code Review Lens</strong>
+              <p>Find risks, edge cases, and simpler fixes.</p>
+            </div>
+            <div class="visual-card compact"></div>
+            <div class="visual-card compact muted"></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="control-panel" aria-label="Prompt controls">
+        <div class="search-wrap">
+          <span class="search-icon" aria-hidden="true"></span>
+          <input id="searchInput" type="search" placeholder="Search title, category, description, or tags..." autocomplete="off">
+        </div>
+        <div class="category-row" id="categoryFilters" aria-label="Filter prompts by category"></div>
+      </section>
+
+      <section class="stats-row" aria-label="Library stats">
+        <article>
+          <span id="totalPrompts">0</span>
+          <p>Saved prompts</p>
+        </article>
+        <article>
+          <span id="favoriteCount">0</span>
+          <p>Favorites</p>
+        </article>
+        <article>
+          <span id="categoryCount">0</span>
+          <p>Categories</p>
+        </article>
+      </section>
+
+      <section class="content-section" id="favoritesSection">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">Pinned for speed</p>
+            <h2>Favorites</h2>
+          </div>
+        </div>
+        <div class="prompt-grid" id="favoritesGrid"></div>
+      </section>
+
+      <section class="content-section" id="library">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">Your local vault</p>
+            <h2>Saved prompts</h2>
+          </div>
+          <button class="secondary-button" id="clearFilters" type="button">Clear filters</button>
+        </div>
+        <div class="prompt-grid" id="promptGrid"></div>
+        <div class="empty-state" id="emptyState" hidden>
+          <div class="empty-illustration" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <h3>No prompts found</h3>
+          <p>Add a new prompt or clear your search to bring the library back.</p>
+          <button class="primary-button" id="emptyCreateButton" type="button">
+            <span class="plus-icon" aria-hidden="true"></span>
+            Create prompt
+          </button>
+        </div>
+      </section>
+    </main>
