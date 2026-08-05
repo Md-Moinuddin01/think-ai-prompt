@@ -133,4 +133,68 @@ function bindEvents() {
   });
 }
 
+function loadPrompts() {
+  const saved = localStorage.getItem(STORAGE_KEY);
+  if (saved) {
+    return JSON.parse(saved);
+  }
+  localStorage.setItem(STORAGE_KEY, JSON.stringify(starterPrompts));
+  return starterPrompts;
+}
+
+function savePrompts() {
+  localStorage.setItem(STORAGE_KEY, JSON.stringify(prompts));
+}
+
+function applyTheme() {
+  const savedTheme = localStorage.getItem(THEME_KEY) || "light";
+  document.documentElement.dataset.theme = savedTheme;
+}
+
+function toggleTheme() {
+  const nextTheme = document.documentElement.dataset.theme === "dark" ? "light" : "dark";
+  document.documentElement.dataset.theme = nextTheme;
+  localStorage.setItem(THEME_KEY, nextTheme);
+  showToast(`${capitalize(nextTheme)} mode saved`);
+}
+
+function render() {
+  renderCategoryFilters();
+  renderStats();
+
+  const filteredPrompts = getFilteredPrompts();
+  const favoritePrompts = filteredPrompts.filter((prompt) => prompt.favorite);
+  const regularPrompts = filteredPrompts.filter((prompt) => !prompt.favorite);
+
+  renderPromptGrid(elements.favoritesGrid, favoritePrompts);
+  renderPromptGrid(elements.promptGrid, [...favoritePrompts, ...regularPrompts]);
+
+  elements.favoritesSection.hidden = favoritePrompts.length === 0;
+  elements.emptyState.hidden = filteredPrompts.length > 0;
+}
+
+function renderStats() {
+  const categories = new Set(prompts.map((prompt) => prompt.category));
+  elements.totalPrompts.textContent = prompts.length;
+  elements.favoriteCount.textContent = prompts.filter((prompt) => prompt.favorite).length;
+  elements.categoryCount.textContent = categories.size;
+}
+
+function renderCategoryFilters() {
+  const categories = ["All", ...new Set(prompts.map((prompt) => prompt.category))];
+  elements.categoryFilters.innerHTML = categories
+    .map((category) => {
+      const activeClass = category === activeCategory ? "active" : "";
+      return `<button class="chip ${activeClass}" type="button" data-category="${escapeHtml(category)}">${escapeHtml(category)}</button>`;
+    })
+    .join("");
+
+  elements.categoryFilters.querySelectorAll(".chip").forEach((chip) => {
+    chip.addEventListener("click", () => {
+      activeCategory = chip.dataset.category;
+      render();
+    });
+  });
+}
+
 
