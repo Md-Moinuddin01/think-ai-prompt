@@ -393,3 +393,25 @@ function fallbackCopy(text) {
   document.execCommand("copy");
   textarea.remove();
 }
+
+function clearFilters() {
+  activeCategory = "All";
+  elements.searchInput.value = "";
+  render();
+}
+
+function parseTags(value) {
+  return value
+    .split(",")
+    .map((tag) => tag.trim())
+    .filter(Boolean);
+}
+
+function findPrompt(id) {
+  return prompts.find((prompt) => prompt.id === id);
+}
+
+function getCategoryColor(category) {
+  const letters = category.split("").reduce((sum, letter) => sum + letter.charCodeAt(0), 0);
+  return categoryColors[letters % categoryColors.length];
+}
