@@ -669,3 +669,16 @@ pre {
   width: 18px;
   height: 18px;
 }
+
+
+.plus-icon::before,
+.plus-icon::after,
+.close-icon::before,
+.close-icon::after {
+  content: "";
+  position: absolute;
+  inset: 8px 2px auto;
+  height: 2px;
+  border-radius: 2px;
+  background: currentColor;
+}
