@@ -784,3 +784,14 @@ pre {
     transform: translateY(0);
   }
 }
+
+@media (max-width: 920px) {
+  .hero-section {
+    grid-template-columns: 1fr;
+    min-height: auto;
+  }
+
+  .prompt-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
