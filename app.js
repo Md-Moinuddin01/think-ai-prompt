@@ -369,3 +369,16 @@ function toggleFavorite(id) {
   render();
   showToast(findPrompt(id).favorite ? "Added to favorites" : "Removed from favorites");
 }
+
+async function copyPrompt(id) {
+  const prompt = findPrompt(id);
+  if (!prompt) return;
+
+  try {
+    await navigator.clipboard.writeText(prompt.body);
+    showToast("Prompt copied");
+  } catch (error) {
+    fallbackCopy(prompt.body);
+    showToast("Prompt copied");
+  }
+}
