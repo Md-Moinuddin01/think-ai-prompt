@@ -122,3 +122,13 @@ button {
   gap: 10px;
   flex-wrap: wrap;
 }
+
+.primary-button,
+.secondary-button,
+.ghost-button,
+.icon-button {
+  border: 0;
+  border-radius: var(--radius);
+  min-height: 42px;
+  transition: transform 180ms ease, box-shadow 180ms ease, background 180ms ease, border-color 180ms ease;
+}
