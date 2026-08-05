@@ -225,3 +225,108 @@ h2 {
 h3 {
   margin-bottom: 8px;
 }
+
+.hero-text {
+  max-width: 620px;
+  color: var(--muted);
+  font-size: clamp(16px, 2vw, 20px);
+  line-height: 1.65;
+}
+
+.hero-visual {
+  overflow: hidden;
+  min-height: 430px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background:
+    linear-gradient(150deg, rgba(15, 139, 141, 0.18), transparent 36%),
+    linear-gradient(320deg, rgba(212, 154, 40, 0.20), transparent 30%),
+    var(--surface);
+  box-shadow: var(--shadow);
+}
+
+.visual-toolbar {
+  display: flex;
+  gap: 8px;
+  padding: 16px;
+  border-bottom: 1px solid var(--line);
+}
+
+.visual-toolbar span {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--line);
+}
+
+.visual-content {
+  display: grid;
+  gap: 14px;
+  padding: 20px;
+}
+
+.visual-card {
+  min-height: 100px;
+  padding: 18px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: color-mix(in srgb, var(--surface) 86%, transparent);
+  box-shadow: var(--shadow-soft);
+}
+
+.visual-card.active {
+  border-color: color-mix(in srgb, var(--gold) 54%, var(--line));
+}
+
+.visual-card small {
+  display: inline-flex;
+  margin-bottom: 10px;
+  color: var(--accent);
+  font-weight: 800;
+}
+
+.visual-card strong {
+  display: block;
+  margin-bottom: 8px;
+}
+
+.visual-card p {
+  margin-bottom: 0;
+  color: var(--muted);
+}
+
+.visual-card.compact {
+  min-height: 44px;
+  background: linear-gradient(90deg, var(--accent-soft), transparent);
+}
+
+.visual-card.compact.muted {
+  width: 72%;
+  background: linear-gradient(90deg, color-mix(in srgb, var(--gold) 26%, transparent), transparent);
+}
+
+.control-panel {
+  display: grid;
+  gap: 16px;
+  padding: 16px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: color-mix(in srgb, var(--surface) 82%, transparent);
+  box-shadow: var(--shadow-soft);
+}
+
+.search-wrap {
+  position: relative;
+}
+
+.search-wrap input {
+  width: 100%;
+  min-height: 54px;
+  padding: 0 18px 0 48px;
+  color: var(--text);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  outline: none;
+  background: var(--surface);
+}
+
