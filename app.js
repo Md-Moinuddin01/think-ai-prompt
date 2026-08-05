@@ -10,3 +10,4 @@ const categoryColors = [
   "#dff6dd",
   "#f1e6d6"
 ];
+
